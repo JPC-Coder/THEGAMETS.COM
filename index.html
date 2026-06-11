@@ -1,212 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>the gamets.com</title>
-    <Link rel="stylesheet" href="styles.css">
-</head> 
- <body>
-  <div 
-       img class="box-image" src="images/BANNER THE GAMETS COLLECT ALL THE GAMETS BANNER 2.jpg" style="width: 100%">
-  <div
-      img class="box-image" src="images/BANNER THE GAMETS COLLECT ALL THE GAMETS BANNER 2.jpg" style="width: 100%">
-   
-  </div>
-<div class="bg-img">
-  <div class="container">
-    <div class="topnav">
-      <a href="index.html">Home</a>
-      <a href="redeem.html">Reedem</a>
-      <a href="contactus.html">Contact Us</a>
-      <a href="about.html">about</a>
-    </div>
-  </div>
-</div>
-<div 
-  img class="box-image" src="images/BANNER THE GAMETS COLLECT ALL THE GAMETS BANNER 2.jpg" style="width: 100%">
-   
-<div>
-  <img class="box-image" src="images/BANNER THE GAMETS COLLECT ALL THE GAMETS BANNER 2.jpg" style="width: 100%">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The-Gamets.com</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="The Gamets home">
+      <img src="assets/artwork/gamets logo 3.png" alt="The Gamets logo" />
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#shop">Shop</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pay">Pay</a>
+    </nav>
+    <a class="cart-pill" href="#cart" aria-label="View cart">
+      <span id="cartCount">0</span>
+      Cart
+    </a>
+  </header>
 
-       <div 
-  class="container">
-    <div class="topnav">
-  </div>
- <!-- Hero section-->
- <div class="main">
-  <div class="main__container">
-    <div class="main__contenet">
-    
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="kicker">Official Gamets merch shop</p>
+        <h3>The Gamets</h3>
+        <p>
+          Posters, stickers, and T-shirt designs featuring the Gamets characters,
+          battle art, logo drops, and collector-style series artwork.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#shop">Shop products</a>
+          <a class="button secondary" href="#gallery">View gallery</a>
+        </div>
+      </div>
+      <div class="hero-product" aria-label="Featured Gamets artwork">
+        <img src="assets/artwork/gamets-team-poster.png" alt="The Gamets full team poster" />
+        <div class="floating-card">
+          <strong>Featured Drop</strong>
+          <span>Team posters, character stickers, and shirt designs from $6.99</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <p class="kicker">Choose product, color, size, quantity</p>
+        <h2>Shop The Drop</h2>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card" data-product="Gamets Team Poster" data-price="22.00">
+          <img src="assets/artwork/gamets-team-poster.png" alt="The Gamets team poster product" />
+          <div class="product-info">
+            <p class="category">Poster</p>
+            <h3>Gamets Team Poster</h3>
+            <p class="price">$22.00</p>
+            <label>Finish
+              <select class="color-select">
+                <option>Gloss</option>
+                <option>Matte</option>
+                <option>Metallic</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>18 x 24 in</option>
+                <option>24 x 36 in</option>
+                <option>30 x 40 in</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="10" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="Skater Glat Sticker" data-price="6.99">
+          <img src="assets/artwork/skater-glat.jpg" alt="Skater Glat sticker product" />
+          <div class="product-info">
+            <p class="category">Sticker</p>
+            <h3>Skater Glat Sticker</h3>
+            <p class="price">$6.99</p>
+            <label>Finish
+              <select class="color-select">
+                <option>Die-cut gloss</option>
+                <option>Holographic</option>
+                <option>Matte vinyl</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>3 in</option>
+                <option>4 in</option>
+                <option>6 in</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="50" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="Gamet Can Sticker" data-price="7.50">
+          <img src="assets/products/sticker-gamet-can.png" alt="Gamet Can sticker product" />
+          <div class="product-info">
+            <p class="category">Sticker</p>
+            <h3>Gamet Can Sticker</h3>
+            <p class="price">$7.50</p>
+            <label>Finish
+              <select class="color-select">
+                <option>White border</option>
+                <option>Clear vinyl</option>
+                <option>Holographic</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="50" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="Boss Character Tee" data-price="28.99">
+          <img src="assets/products/tee-boss.png" alt="Boss character T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Boss Character Tee</h3>
+            <p class="price">$28.99</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>White</option>
+                <option>Red</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="Gamet Can Tee" data-price="29.99">
+          <img src="assets/products/tee-gamet-can.png" alt="Gamet Can T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamet Can Tee</h3>
+            <p class="price">$29.99</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Charcoal</option>
+                <option>Navy</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/tee-group.png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+ <article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/tee mosquito.png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+
+<article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/tee skate till death.png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+
+<article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/tee ghost and fly.png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+
+<article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/tee golden blaze.png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
 
 
 
-  
- <p style="color: rgb(189, 217, 241);" >The GAMETS collectable value of each Cards,
-   on top of card is the value of each card.
-   These are the cards to look out for high's&ndash;low values. </p>
- 
- <div class="box-grid">
-  <div class="box-flex">
-    <div class="image-container"></div>
-    <img class="box-img" src="images/image31.jpg" alt="gamets" id="images" style="width: 100%">
-    <h5 class="box-caption">Value $75.00 US</h5>
-  </div>
-  <script srd="app.js"></script>
-  <!-- end: box-flex -->
-  <div class="box-flex box-flex-center">
-    <img class="box-img" src="images/PAPERCUT GAMET 36.jpg" style="width: 100%">
-    <h5 class="box-caption">Value $200.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom">
-    <img class="box-img" src="images/image34.jpg" style="width: 100%" >
-    <h5 class="box-caption">Value $45.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-top-right">
-    <img class="box-img" src="images/image36.jpg" style="width:100%">
-    <h5 class="box-caption">3000 points</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-center-left">
-    <img class="box-img" src="images/image38.jpg" style="width: 100%" >
-    <h5 class="box-caption">Value $220.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image16.jpg"  style="width: 100%">
-    <h5 class="box-caption">Value 11.50 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom">
-    <img class="box-img" src="images/image9.jpg" style="width: 100%">
-    <h5 class="box-caption">Value 55.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-top-right">
-    <img class="box-img" src="images/image8.jpg" style="width: 100%">
-    <h5 class="box-caption">Value $125.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-center-left">
-    <img class="box-img" src="images/image6.jpg" style="width: 100%">
-    <h5 class="box-caption">Value $179.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image7.jpg" style="width:100%">
-    <h5 class="box-caption">Value 325 points</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image5.jpg" style="width:100%">
-    <h5 class="box-caption">Value 1000 points</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom">
-    <img class="box-img" src="images/image4.jpg" style="width:100%">
-    <h5 class="box-caption">Value 300 points</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-top-right">
-    <img class="box-img" src="images/image20.jpg" style="width:100%">
-    <h5 class="box-caption">Value $22.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-center-left">
-    <img class="box-img" src="images/IMAGE21.jpg" style="width:100%">
-    <h5 class="box-caption">Value $37.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image35.jpg" style="width:100%">
-    <h5 class="box-caption">Value 500 points </h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/IMAGE23.jpg" style="width:100%">
-    <h5 class="box-caption">Value 40.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom">
-    <img class="box-img" src="images/IMAGE24.jpg" style="width:100%">
-    <h5 class="box-caption">Value 75.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-top-right">
-    <img class="box-img" src="images/image2.jpg" style="width:100%">
-    <h5 class="box-caption">Value 2.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-center-left">
-    <img class="box-img" src="images/IMAGE26.jpg" style="width:100%">
-    <h5 class="box-caption"> Value 300.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image28.jpg" style="width:100%">
-    <h5 class="box-caption">Value 110.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image11.jpg" style="width:100%">
-    <h5 class="box-caption">value 10.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-">
-  <img class="box-img" src="images/image29.jpg" style="width:100%">
-    <h5 class="box-caption">value $75.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-top-right">
-    <img class="box-img" src="images/image14.jpg" style="width:100%">
-    <h5 class="box-caption">Value $150.00 US</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-center-left">
-    <img class="box-img" src="images/image32.jpg" style="width:100%">
-    <h5 class="box-caption">Value $60.00 Us</h5>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-bottom-right">
-    <img class="box-img" src="images/image18.jpg" style="width:100%">
-    <h5 class="box-caption">value 5.00 us</h5>
-  </div><!-- end: box-flex -->
-  </div><!-- end: box.grid -->
- <br>
- <hr>
- <br>
- <div class="main__contenet">
-  <p style="color:aliceblue"> Wanted Dead or Alive First series Collectable value cards</p>
-   
-    <p style="color:rgb(2, 9, 15)">New Generation</p>
-  <div class="box-grid">
-  <div class="box-flex">
-    <img class="box-img" src="images/WANTED GAMETS  SERIES 1 51-32.jpg" style="width:100%">
-    <h5 class="box-caption">value $7.99 US</h5>
-    <h6 class="box-caption align-end">jpc-collection edition </h6>
-  </div><!-- end: box-flex -->
-  <div class="box-flex box-flex-center">
-    <img class="box-img" src="images/WANTED GAMETS  SERIES 62-92.jpg" style="width:100%">
-    <h6 class="box-caption align-start">value $25.00 US</h6>
-    <h5 class="box-caption">jpc-collection edition</h5>
-    <h6 class="box-caption align-end">jpc-collection edition </h6>
-  <!-- end: box-flex --></div>
-  <div class="box-flex box-flex-bottom">
-    <img class="box-img" src="images/WANTED GAMETS  SERIES koming at u 98-90.jpg" style="width:100%">
-    <h6 class="box-caption align-center">jpc-collection edition </h6>
-    <h5 class="box-caption">value $30.00 US</h5>
-  </div><!-- end: box-flex -->
- </div><!-- end box-grid -->
- </ul>
- </div>
- </nav>
- <!-- Hero section-->
- <div class="main">
-  <div class="main__container">
-    <div class="main__contenet">
-      <p style="color:aliceblue">New Generation Card collecting Style.</p>
-      <p style="color:aliceblue">More series to Come!</p>
-      <p style="color:aliceblue">This is for fun and entertainment.</p>
-      
- </div>
+        <article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/mask gamet bandit. tee..png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+
+<article class="product-card" data-product="Gamets Crew Tee" data-price="32.00">
+          <img src="assets/products/tee moon bunny.png" alt="Gamets crew T-shirt design" />
+          <div class="product-info">
+            <p class="category">T-shirt</p>
+            <h3>Gamets Crew Tee</h3>
+            <p class="price">$32.00</p>
+            <label>Color
+              <select class="color-select">
+                <option>Black</option>
+                <option>Smoke Gray</option>
+                <option>White</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>2XL</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
 
 
- <!-- Hero section-->
- <div class="main">
-  <div class="main__container">
-    <div class="main__contenet">
- <p style="color:rgb(0, 0, 0)"></p>
-    </div>
+        <article class="product-card" data-product="Golden Blaze Poster" data-price="24.00">
+          <img src="assets/artwork/golden-blaze.png" alt="Golden Blaze poster product" />
+          <div class="product-info">
+            <p class="category">Poster</p>
+            <h3>Golden Blaze Poster</h3>
+            <p class="price">$24.00</p>
+            <label>Finish
+              <select class="color-select">
+                <option>Gloss</option>
+                <option>Matte</option>
+                <option>Canvas</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>12 x 18 in</option>
+                <option>18 x 24 in</option>
+                <option>24 x 36 in</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="10" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
 
+        <article class="product-card" data-product="Red Flame Poster" data-price="20.00">
+          <img src="assets/artwork/red-flame.jpg" alt="Red Flame poster product" />
+          <div class="product-info">
+            <p class="category">Poster</p>
+            <h3>Red Flame Poster</h3>
+            <p class="price">$20.00</p>
+            <label>Finish
+              <select class="color-select">
+                <option>Gloss</option>
+                <option>Matte</option>
+                <option>Metallic</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>11 x 17 in</option>
+                <option>18 x 24 in</option>
+                <option>24 x 36 in</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="10" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
 
-  <footer> Thegamets.com Copyright&copy:2022-2023  All rights reserved.</footer>
-  </div>
+        <article class="product-card" data-product="Coloring Book Cover Print" data-price="16.00">
+          <img src="assets/artwork/coloring-book.png" alt="Gamets coloring book cover print" />
+          <div class="product-info">
+            <p class="category">Print</p>
+            <h3>Coloring Book Cover Print</h3>
+            <p class="price">$16.00</p>
+            <label>Finish
+              <select class="color-select">
+                <option>Satin</option>
+                <option>Gloss</option>
+                <option>Matte</option>
+              </select>
+            </label>
+            <label>Size
+              <select class="size-select">
+                <option>8 x 10 in</option>
+                <option>11 x 14 in</option>
+                <option>16 x 20 in</option>
+              </select>
+            </label>
+            <label>Quantity
+              <input class="qty-input" type="number" min="1" max="20" value="1" />
+            </label>
+            <button class="add-button" type="button">Add to cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <p class="kicker">Carousel gallery</p>
+        <h2>Gamets Artwork</h2>
+      </div>
+      <div class="carousel" aria-label="Gamets product gallery">
+        <button class="carousel-btn" id="prevSlide" type="button" aria-label="Previous design">&#8249;</button>
+        <div class="carousel-window">
+          <div class="carousel-track" id="carouselTrack">
+            <figure>
+              <img src="assets/artwork/rise-of-the-gamets.png" alt="The Rise of the Gamets poster" />
+              <figcaption>The Rise of The Gamets</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/artwork/team-fear.jpg" alt="Team Fear artwork" />
+              <figcaption>Team Fear</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/artwork/teaming-up.jpg" alt="The Gamets teaming up artwork" />
+              <figcaption>Series Team-Up</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/artwork/electro-mite.jpg" alt="Electro Mite artwork" />
+              <figcaption>Electro Mite</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/artwork/wrecking-ball.jpg" alt="Wrecking Ball artwork" />
+              <figcaption>Wrecking Ball</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/artwork/ready-for-war.jpg" alt="Ready For War poster" />
+              <figcaption>Ready For War</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/artwork/battle-series.jpg" alt="Battle Series artwork" />
+              <figcaption>Battle Series</figcaption>
+            </figure>
+          </div>
+        </div>
+        <button class="carousel-btn" id="nextSlide" type="button" aria-label="Next design">&#8250;</button>
+      </div>
+    </section>
 
-   <body
+    <section class="checkout-section" id="cart">
+      <div>
+        <p class="kicker">Your bag</p>
+        <h2>Order Summary</h2>
+        <div class="cart-list" id="cartList">
+          <p class="empty-cart">No items yet. Add a product to start your order.</p>
+        </div>
+      </div>
+      <aside class="pay-card" id="pay" aria-label="Payment page">
+        <p class="kicker">Pay page</p>
+        <h2>Checkout</h2>
+        <label>Name on card
+          <input type="text" placeholder="Your name" />
+        </label>
+        <label>Email
+          <input type="email" placeholder="you@example.com" />
+        </label>
+        <label>Card number
+          <input type="text" placeholder="1234 5678 9012 3456" />
+        </label>
+        <div class="pay-row">
+          <label>Exp
+            <input type="text" placeholder="MM/YY" />
+          </label>
+          <label>CVC
+            <input type="text" placeholder="123" />
+          </label>
+        </div>
+        <div class="total-row">
+          <span>Total</span>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+        <button class="pay-button" type="button">Pay now</button>
+      </aside>
+    </section>
+  </main>
 
+  <footer>
+    <strong>The-Gamets.com.</strong>  <strong>Copyright 2026.</strong> <strong>All rights reserved.</strong>
+    <span>Posters, stickers, shirt designs, and character art.</span>
+  </footer>
 
-   
-   </html>
+  <script src="script.js"></script>
+</body>
+</html>
