@@ -532,6 +532,252 @@
       </div>
     </section>
 
+ <title>Contact The Gamets</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-page {
+      min-height: calc(100vh - 75px);
+      padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 5vw, 5.5rem);
+      background:
+        linear-gradient(rgba(255, 253, 248, 0.9), rgba(255, 253, 248, 0.96)),
+        url("assets/new-artwork/thegamets-wide.png") center / cover;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(320px, 1fr);
+      gap: clamp(1.25rem, 4vw, 3rem);
+      align-items: start;
+    }
+
+    .contact-intro,
+    .contact-form {
+      background: #fff;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-intro {
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .contact-intro img {
+      width: 100%;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .product-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      padding: 1rem;
+      background: #fff8ea;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .check-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    .check-option input {
+      width: 18px;
+      min-height: 18px;
+      margin-top: 0.1rem;
+      accent-color: var(--red);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 0.8rem;
+      color: var(--ink);
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      resize: vertical;
+    }
+
+    .submit-button {
+      min-height: 52px;
+      color: #fff;
+      background: var(--red);
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 900;
+      box-shadow: 7px 7px 0 var(--ink);
+    }
+
+    .small-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout,
+      .form-row,
+      .product-checklist {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="The Gamets home">
+      <img src="assets/new-artwork/gamet-logo3.png" alt="The Gamets logo" />
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#pay">Pay</a>
+      <a href="contact.html">Contact</a>
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=61581024641362" target="_blank" rel="noopener noreferrer" aria-label="The Gamets on Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="11" fill="#1877f2"></circle>
+          <path fill="#ffffff" d="M13.4 20v-7h2.3l.4-2.7h-2.7V8.6c0-.8.2-1.3 1.4-1.3h1.4V4.9c-.7-.1-1.5-.2-2.1-.2-2.2 0-3.7 1.3-3.7 3.7v1.9H8V13h2.4v7h3z"></path>
+        </svg>
+        Facebook
+      </a>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-layout">
+      <div class="contact-intro">
+        <p class="kicker">Custom orders and product questions</p>
+        <h2>The Gamets Contact Form</h2>
+        <p>
+          Tell us what Gamets product you want, which product number or ID you
+          are asking about, and any custom needs for stickers, posters, shirts,
+          prints, or special character merch.
+        </p>
+        <img src="assets/new-artwork/squeaky-bunch.jpg" alt="The Gamets colorful character artwork" />
+      </div>
+
+      <form class="contact-form" action="mailto:ccphscon@gmail.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label>
+            Your name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+        </div>
+
+        <label>
+          What is your question?
+          <input type="text" name="question" placeholder="Ask about a product, order, custom design, or price" required />
+        </label>
+
+        <label>
+          Product number or ID
+          <input type="text" name="product_id" placeholder="Example: Product #3, Moon Bunny, Ink Sticker, custom tee" />
+        </label>
+
+        <div>
+          <p class="kicker">Select products</p>
+          <div class="product-checklist" aria-label="Product options">
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 01 - Moon Bunny Poster" />
+              Product 01 - Moon Bunny Poster
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 02 - Air Head Print" />
+              Product 02 - Air Head Print
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 03 - Ink Sticker" />
+              Product 03 - Ink Sticker
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 04 - Mosquito Bug Tee" />
+              Product 04 - Mosquito Bug Tee
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 05 - Moon Bunny Tee" />
+              Product 05 - Moon Bunny Tee
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 06 - Skater Glat Tee" />
+              Product 06 - Skater Glat Tee
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 07 - Shoot Em Up Sticker" />
+              Product 07 - Shoot Em Up Sticker
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 08 - Squeaky Bunch Poster" />
+              Product 08 - Squeaky Bunch Poster
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 09 - Gold Mask Poster" />
+              Product 09 - Gold Mask Poster
+            </label>
+            <label class="check-option">
+              <input type="checkbox" name="products" value="Product 10 - Custom Gamets Product" />
+              Product 10 - Custom Gamets Product
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>
+            Preferred product type
+            <select name="product_type">
+              <option>Sticker</option>
+              <option>Poster</option>
+              <option>T-shirt</option>
+              <option>Print</option>
+              <option>Custom bundle</option>
+            </select>
+          </label>
+          <label>
+            Quantity needed
+            <input type="number" name="quantity" min="1" max="500" value="1" />
+          </label>
+        </div>
+
+        <label>
+          Other needs, wants, or custom product details
+          <textarea name="custom_details" placeholder="Tell us colors, sizes, product IDs, custom character ideas, shipping notes, budget, or anything else you want made."></textarea>
+        </label>
+
+        <button class="submit-button" type="submit">Send request</button>
+        <p class="small-note">
+          Requests will be sent to <strong>ccphscon@gmail.com</strong>.
+        </p>
+      </form>
+    </section>
+  </main>
+    
     <section class="checkout-section" id="cart">
       <div>
         <p class="kicker">Your bag</p>
