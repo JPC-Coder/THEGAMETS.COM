@@ -787,3 +787,409 @@ body.lightbox-open {
     }
 
 
+.card-viewer {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 660px;
+  border: 1px solid rgba(255, 211, 106, 0.28);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 59, 31, 0.16), transparent 24rem),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.card-stage {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.card-stage img {
+  max-height: 620px;
+  width: min(100%, 430px);
+  border-radius: 20px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 38px rgba(0, 0, 0, 0.52));
+}
+
+.card-stage p {
+  margin-bottom: 0;
+  color: var(--gold);
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.carousel-control,
+.lightbox-nav,
+.lightbox-close {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.carousel-control {
+  z-index: 1;
+  width: 54px;
+  height: 54px;
+  font-size: 2.2rem;
+}
+
+.carousel-control:hover,
+.lightbox-nav:hover,
+.lightbox-close:hover {
+  background: rgba(255, 138, 0, 0.44);
+}
+
+.card-thumbs {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.card-thumbs button {
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #000;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.66;
+}
+
+.card-thumbs button.is-active {
+  border-color: var(--gold);
+  opacity: 1;
+}
+
+.card-thumbs img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.book-cover {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.8fr) 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.book-cover img {
+  width: 100%;
+  max-height: 360px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.book-pages {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.book-page {
+  min-height: 210px;
+  color: var(--text);
+  border: 1px dashed rgba(255, 211, 106, 0.5);
+  border-radius: 14px;
+  background:
+    linear-gradient(135deg, rgba(255, 59, 31, 0.18), transparent),
+    rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.book-page span,
+.book-page strong {
+  display: block;
+}
+
+.book-page span {
+  color: var(--gold);
+  font-size: 3rem;
+  font-weight: 1000;
+}
+
+.book-page strong {
+  text-transform: uppercase;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  border: 1px solid rgba(255, 211, 106, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.035));
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 4vw, 2.5rem);
+}
+
+form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+input,
+textarea {
+  width: 100%;
+  color: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  padding: 0.8rem;
+}
+
+.site-footer {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--line);
+  background: #050507;
+  text-align: center;
+}
+
+.site-footer img {
+  width: min(360px, 80vw);
+  border-radius: 10px;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0 0.9rem;
+  font-weight: 900;
+}
+
+.social-icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 1000;
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+.instagram {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.tiktok {
+  background: linear-gradient(135deg, #00f2ea, #111, #ff0050);
+}
+
+.site-footer p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 4.5rem clamp(0.75rem, 4vw, 4rem);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox figure {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  max-width: min(1100px, 100%);
+  margin: 0;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 78vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 0 60px rgba(255, 59, 31, 0.22);
+}
+
+.lightbox figcaption {
+  color: #fff;
+  font-weight: 900;
+  text-align: center;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  font-size: 2.4rem;
+  transform: translateY(-50%);
+}
+
+.lightbox-nav.prev {
+  left: 1rem;
+}
+
+.lightbox-nav.next {
+  right: 1rem;
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .book-pages,
+  .card-thumbs {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    display: none;
+    width: min(280px, calc(100vw - 2rem));
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: rgba(7, 8, 11, 0.96);
+    padding: 0.8rem;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .hero,
+  .contact-card,
+  .book-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-art img {
+    min-height: 260px;
+  }
+
+  .showcase-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-viewer {
+    min-height: 0;
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #prevCard {
+    left: 0.6rem;
+  }
+
+  #nextCard {
+    right: 0.6rem;
+  }
+
+  .book-cover {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-grid,
+  .showcase-strip,
+  .book-pages {
+    grid-template-columns: 1fr;
+  }
+
+  .card-thumbs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lightbox-nav {
+    bottom: 1rem;
+    top: auto;
+    transform: none;
+  }
+}
+
+
