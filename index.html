@@ -673,18 +673,78 @@
         <button class="pay-button" type="button">Pay now</button>
       </aside>
     </section>
+  <section class="section cards-section" id="cards">
+      <div class="section-heading">
+        <p class="kicker">Collectors trading cards</p>
+        <h2>Card Carousel</h2>
+        <p>A dedicated viewing window with 30 trading cards from the cards folder.</p>
+      </div>
+      <div class="card-viewer">
+        <button class="carousel-control" id="prevCard" type="button" aria-label="Previous card">‹</button>
+        <div class="card-stage">
+          <img id="featuredCard" class="lightbox-image" src="images/assets/ cards/ChatGPT Image 13 jun 2026, 02_46_53 p.m. (1).png" alt="Collectors trading card" />
+          <p id="cardCounter">Card 1 of 30</p>
+        </div>
+        <button class="carousel-control" id="nextCard" type="button" aria-label="Next card">›</button>
+      </div>
+      <div class="card-thumbs" id="cardThumbs" aria-label="Trading card thumbnails"></div>
+    </section>
 
-   </main>
+    <section class="section books-section" id="books">
+      <div class="section-heading">
+        <p class="kicker">Book panels</p>
+        <h2>Comic And Coloring Book</h2>
+        <p>Six placeholder viewing panels are ready for comic and coloring book pages you add later.</p>
+      </div>
+      <div class="book-layout">
+        <article class="book-cover">
+          <img class="lightbox-image" src="images/assets/books/comicbook1.png" alt="The Rise of The Gamets comic book cover" />
+          <div><p class="category">Comic Book</p><h3>The Rise of The Gamets #1</h3><p class="price">$9.99</p><a class="pay-link" href="#contact">Pay Button</a></div>
+        </article>
+        <article class="book-cover">
+          <img class="lightbox-image" src="images/assets/artwork/coloring-book.png" alt="Gamets coloring book cover" />
+          <div><p class="category">Coloring Book</p><h3>Gamets Coloring Book</h3><p class="price">$9.99</p><a class="pay-link" href="#contact">Pay Button</a></div>
+        </article>
+      </div>
+      <div class="book-pages" aria-label="Book page preview panels">
+        <button class="book-page lightbox-placeholder" type="button" data-title="Comic Page 1"><span>01</span><strong>Comic Page</strong></button>
+        <button class="book-page lightbox-placeholder" type="button" data-title="Comic Page 2"><span>02</span><strong>Comic Page</strong></button>
+        <button class="book-page lightbox-placeholder" type="button" data-title="Comic Page 3"><span>03</span><strong>Comic Page</strong></button>
+        <button class="book-page lightbox-placeholder" type="button" data-title="Coloring Page 1"><span>04</span><strong>Coloring Page</strong></button>
+        <button class="book-page lightbox-placeholder" type="button" data-title="Coloring Page 2"><span>05</span><strong>Coloring Page</strong></button>
+        <button class="book-page lightbox-placeholder" type="button" data-title="Coloring Page 3"><span>06</span><strong>Coloring Page</strong></button>
+      </div>
+    </section>
 
-  <footer>
-    <strong>The-Gamets.com.</strong>  <strong>Copyright 2026.</strong> <strong>All rights reserved.</strong>
+    <section class="section contact-section" id="contact">
+      <div class="contact-card">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Need a product link added?</h2>
+          <p>Send the Stripe buy button ID, product name, price, and image. This section is ready for custom orders, wholesale questions, and new art uploads.</p>
+        </div>
+        <form action="mailto:info@the-gamets.com" method="post" enctype="text/plain">
+          <label>Name <input type="text" name="name" required /></label>
+          <label>Email <input type="email" name="email" required /></label>
+          <label>Message <textarea name="message" rows="5" required></textarea></label>
+          <button class="button primary" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-     <a class="social-link" href="https://www.facebook.com/profile.php?id=61581024641362" target="_blank" rel="noopener noreferrer" aria-label="Follow The Gamets on Facebook">
-      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="11" fill="#1877f2"></circle>
-        <path fill="#ffffff" d="M13.4 20v-7h2.3l.4-2.7h-2.7V8.6c0-.8.2-1.3 1.4-1.3h1.4V4.9c-.7-.1-1.5-.2-2.1-.2-2.2 0-3.7 1.3-3.7 3.7v1.9H8V13h2.4v7h3z"></path>
-      </svg>
-      Facebook
+  <footer class="site-footer">
+    <img src="images/assets/new-artwork/thegamets-wide.png" alt="The Gamets footer logo" />
+    <div class="socials" aria-label="Social media links">
+      <a href="https://www.facebook.com/profile.php?id=61581024641362" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="social-icon facebook">f</span>Facebook</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="social-icon instagram">◎</span>Instagram</a>
+      <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><span class="social-icon tiktok">♪</span>TikTok</a>
+    </div>
+    <p>© 2026 The Gamets. All rights reserved.</p>
+  </footer>
+    
+
+
     </a>    <span>Posters, stickers, shirt designs, and character art.</span>
   </footer>
 
