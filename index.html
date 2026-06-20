@@ -651,14 +651,25 @@
           <p class="kicker">Contact</p>
           <h2>Need a custom Product?</h2>
           <p> Please visit our sites for more info.</p>
+    <div class="container">
+  <h1>Form Submit</h1>
+  <form target="_blank" action="https://formsubmit.co/your@email.com" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
         </div>
-        <form action="mailto:info@the-gamets.com" method="post" enctype="text/plain">
-          <label>Name <input type="text" name="name" required /></label>
-          <label>Email <input type="email" name="email" required /></label>
-          <label>Message <textarea name="message" rows="5" required></textarea></label>
-          <button class="button primary" type="submit">Send Message</button>
-        </form>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
       </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
+</div>
     </section>
   </main>
 
