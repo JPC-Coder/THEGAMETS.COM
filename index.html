@@ -432,23 +432,17 @@
             <h3>Comic Book #1  #-B102</h3>
             <p class="price">$9.99</p>
             <label>Only one style 
-              <select class="color-select">
-                <option>Gloss only</option>
-                <option></option>
-                <option></option>
-              </select>
-            </label>
-            <label>Size
-              <select class="size-select">
-                <option>11 x 17 in</option>
-                <option>18 x 24 in</option>
-                <option>24 x 36 in</option>
-              </select>
-            </label>
-            <label>Quantity
-              <input class="qty-input" type="number" min="1" max="10" value="1" />
-            </label>
-            <button class="add-button" type="button">Add to cart</button>
+
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
+
+<stripe-buy-button
+  buy-button-id="buy_btn_1TkcmcJ6at4gTKvqXC7iig8P"
+  publishable-key="pk_live_51Th02VJ6at4gTKvq9KvXmSLxMJhaJaBGIE5a1EDqppZI2H3jmfmxy7pmu8eFPHYYF9uS6n7Ki53Vh4MSf9pzfvmA00gGkUKIgp"
+>
+</stripe-buy-button>
+              
           </div>
         </article>
         <article class="product-card" data-product="Coloring Book #-B812" data-price="9.99">
