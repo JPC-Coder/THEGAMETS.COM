@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore The Gamets collectible value cards from every series. Search, sort, enlarge, and flip each card.">
+  <meta name="theme-color" content="#08090d">
+  <meta property="og:title" content="The Gamets Collectible Value Cards — All Series">
+  <meta property="og:description" content="Explore The Gamets collectible value cards, rare finds, sketch cards, and premium variants.">
+  <title>The Gamets Collectible Value Cards — All Series</title>
+  <style>
+    :root {
+      --bg: #07080b;
+      --panel: rgba(18, 20, 27, .94);
+      --panel-2: rgba(28, 30, 39, .92);
+      --line: rgba(255,255,255,.12);
+      --gold: #ffcc38;
+      --gold-2: #ff8f00;
+      --orange: #ff5a1f;
+      --cyan: #49d7ff;
+      --text: #f6f7fb;
+      --muted: #aeb4c2;
+      --danger: #ff5869;
+      --radius: 18px;
+      --shadow: 0 22px 70px rgba(0,0,0,.52);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% -10%, rgba(255, 143, 0, .22), transparent 35rem),
+        radial-gradient(circle at 90% 10%, rgba(73, 215, 255, .12), transparent 32rem),
+        linear-gradient(180deg, #090a0f 0%, #06070a 55%, #0a0b0f 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .skip-link {
+      position: fixed;
+      left: 14px;
+      top: -100px;
+      z-index: 9999;
+      padding: 10px 14px;
+      background: #fff;
+      color: #000;
+      border-radius: 8px;
+    }
+    .skip-link:focus { top: 14px; }
+
+    .site-header {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 204, 56, .23);
+      background:
+        linear-gradient(105deg, rgba(0,0,0,.88), rgba(0,0,0,.56)),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0 2px, transparent 2px 13px);
+    }
+    .site-header::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      background: conic-gradient(from 160deg, transparent, rgba(255, 181, 0, .13), transparent 25%);
+      animation: slowSpin 18s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes slowSpin { to { transform: rotate(360deg); } }
+
+    .hero {
+      position: relative;
+      width: min(1500px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(44px, 8vw, 100px) 0 54px;
+      text-align: center;
+    }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+    h1 {
+      margin: 0 auto;
+      max-width: 1100px;
+      font-size: clamp(2.2rem, 6vw, 5.7rem);
+      line-height: .92;
+      letter-spacing: -.045em;
+      text-transform: uppercase;
+      text-shadow: 0 4px 0 #000, 0 0 34px rgba(255, 181, 0, .26);
+    }
+    h1 span {
+      display: block;
+      margin-top: .15em;
+      color: var(--gold);
+      font-size: .45em;
+      letter-spacing: .08em;
+    }
+    .hero-copy {
+      max-width: 760px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .hero-badge {
+      border: 1px solid rgba(255, 204, 56, .27);
+      background: rgba(255,255,255,.05);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: #e9edf5;
+      font-size: .85rem;
+      font-weight: 800;
+    }
+
+    main {
+      width: min(1500px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 70px;
+    }
+
+    .controls {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: grid;
+      grid-template-columns: minmax(220px, 1.8fr) repeat(4, minmax(150px, 1fr)) auto;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(10, 11, 16, .88);
+      box-shadow: 0 18px 45px rgba(0,0,0,.3);
+      backdrop-filter: blur(18px);
+    }
+    .control {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 11px;
+      background: #151720;
+      color: var(--text);
+      padding: 0 13px;
+      outline: none;
+    }
+    .control:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(255,204,56,.15);
+    }
+    .control::placeholder { color: #8e95a5; }
+    select.control { cursor: pointer; }
+    .reset-btn {
+      border: 1px solid rgba(255, 204, 56, .35);
+      border-radius: 11px;
+      background: linear-gradient(180deg, #3b2a09, #201606);
+      color: #ffe18c;
+      padding: 0 17px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .reset-btn:hover { filter: brightness(1.18); }
+
+    .toolbar-summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 0 2px 18px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .gold-key {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .gold-key strong { color: var(--gold); }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 245px), 1fr));
+      gap: clamp(18px, 2vw, 30px);
+      align-items: start;
+    }
+
+    .card-tile {
+      position: relative;
+      min-width: 0;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(31,33,43,.97), rgba(15,16,22,.97));
+      box-shadow: 0 16px 48px rgba(0,0,0,.32);
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .card-tile:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 204, 56, .45);
+      box-shadow: 0 24px 70px rgba(0,0,0,.5), 0 0 24px rgba(255, 179, 0, .08);
+    }
+
+    .card-stage {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 822 / 1122;
+      padding: 0;
+      border: 0;
+      background: #0b0c10;
+      cursor: zoom-in;
+      perspective: 1400px;
+      overflow: visible;
+    }
+    .flip-inner {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      transition: transform .78s cubic-bezier(.22,.8,.18,1);
+    }
+    .flip-inner.is-flipped { transform: rotateY(180deg); }
+    .card-face {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: #090a0d;
+    }
+    .card-face.back { transform: rotateY(180deg); }
+    .card-face img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-face.front::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 0 35%, rgba(255,255,255,.13) 46%, transparent 57%);
+      transform: translateX(-130%);
+      transition: transform .8s ease;
+      pointer-events: none;
+    }
+    .card-tile:hover .card-face.front::after { transform: translateX(130%); }
+
+    .gold-star {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 5;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #ffe888;
+      border-radius: 50%;
+      color: #1b1200;
+      background: radial-gradient(circle at 34% 28%, #fff6a8, #ffc400 50%, #d67800 100%);
+      box-shadow: 0 0 20px rgba(255, 196, 0, .8);
+      font-size: 1.5rem;
+      text-shadow: 0 1px 0 #fff9b7;
+      animation: pulseStar 2.2s ease-in-out infinite;
+    }
+    @keyframes pulseStar {
+      50% { transform: scale(1.08) rotate(6deg); box-shadow: 0 0 32px rgba(255, 196, 0, 1); }
+    }
+    .rare-ribbon {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      top: 18px;
+      padding: 7px 14px 7px 11px;
+      background: linear-gradient(90deg, #ff8f00, #ffd84d);
+      color: #160d00;
+      font-size: .72rem;
+      font-weight: 1000;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    }
+    .back-copy {
+      position: absolute;
+      inset: auto 10px 10px;
+      z-index: 3;
+      border: 1px solid rgba(255, 220, 108, .6);
+      border-radius: 12px;
+      background: rgba(0,0,0,.76);
+      color: #fff2bd;
+      padding: 10px 12px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,.55);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+    }
+    .back-title {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 3px;
+      font-size: .78rem;
+    }
+
+    .card-details { padding: 15px; }
+    .card-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+    }
+    .card-name {
+      margin: 0;
+      font-size: 1.14rem;
+      line-height: 1.15;
+      letter-spacing: -.015em;
+    }
+    .card-number {
+      flex: 0 0 auto;
+      color: var(--gold);
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+    .card-meta {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .tag {
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 999px;
+      background: rgba(255,255,255,.055);
+      color: #d8dce6;
+      padding: 4px 8px;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .tag.rarity { color: #ffe18c; border-color: rgba(255,204,56,.26); }
+    .value-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin-top: 13px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.09);
+    }
+    .value-label {
+      color: var(--muted);
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+    .value-amount {
+      display: block;
+      color: var(--gold);
+      font-size: 1.45rem;
+      line-height: 1;
+      font-weight: 1000;
+      font-variant-numeric: tabular-nums;
+    }
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .action-btn {
+      min-height: 42px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 10px;
+      background: #222530;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: .82rem;
+      transition: filter .2s ease, transform .2s ease;
+    }
+    .action-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+    .action-btn.primary {
+      border-color: rgba(255,204,56,.45);
+      background: linear-gradient(180deg, #4c3509, #261a05);
+      color: #ffe296;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 60px 20px;
+      border: 1px dashed rgba(255,255,255,.2);
+      border-radius: 18px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .legal-note {
+      margin-top: 38px;
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .site-footer {
+      padding: 28px 16px 40px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #8f96a6;
+      text-align: center;
+      font-size: .88rem;
+    }
+
+    dialog {
+      width: min(1120px, calc(100% - 24px));
+      max-height: calc(100vh - 24px);
+      padding: 0;
+      border: 1px solid rgba(255,204,56,.33);
+      border-radius: 20px;
+      color: var(--text);
+      background: #11131a;
+      box-shadow: var(--shadow);
+      overflow: auto;
+    }
+    dialog::backdrop {
+      background: rgba(0,0,0,.84);
+      backdrop-filter: blur(10px);
+    }
+    .modal-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 500px) minmax(260px, 1fr);
+      min-height: 620px;
+    }
+    .modal-visual-wrap {
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: clamp(18px, 4vw, 40px);
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,184,0,.15), transparent 54%),
+        #090a0e;
+    }
+    .modal-stage {
+      position: relative;
+      width: min(100%, 430px);
+      aspect-ratio: 822 / 1122;
+      border: 0;
+      border-radius: 15px;
+      padding: 0;
+      overflow: hidden;
+      background: #06070a;
+      box-shadow: 0 22px 65px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.12);
+      cursor: pointer;
+      perspective: 1500px;
+    }
+    .modal-stage .flip-inner { position: absolute; inset: 0; }
+    .modal-stage img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-panel {
+      position: relative;
+      padding: clamp(25px, 5vw, 54px);
+      background: linear-gradient(180deg, #191b24, #11131a);
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 4;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      background: rgba(0,0,0,.35);
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+    .modal-kicker {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 950;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .modal-title {
+      margin: 9px 0 4px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+    .modal-number {
+      color: #d3d8e5;
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+    .modal-value {
+      margin: 26px 0 8px;
+      color: var(--gold);
+      font-size: clamp(2.3rem, 6vw, 4.4rem);
+      line-height: 1;
+      font-weight: 1000;
+      font-variant-numeric: tabular-nums;
+    }
+    .modal-description { color: #c2c7d2; font-size: 1.02rem; }
+    .modal-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .modal-stat {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 11px;
+      background: rgba(255,255,255,.04);
+    }
+    .modal-stat span {
+      display: block;
+      color: #9098a9;
+      font-size: .7rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      font-weight: 850;
+    }
+    .modal-stat strong { display: block; margin-top: 3px; }
+    .modal-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 9px;
+      margin-top: 25px;
+    }
+    .modal-nav {
+      min-height: 44px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 10px;
+      background: #282b36;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .modal-nav.flip {
+      border-color: rgba(255,204,56,.38);
+      color: #ffe18d;
+      background: #382705;
+    }
+    .modal-hint {
+      margin-top: 12px;
+      color: #858d9c;
+      font-size: .78rem;
+      text-align: center;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 1150px) {
+      .controls { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .controls .search-control { grid-column: span 2; }
+    }
+    @media (max-width: 760px) {
+      .hero { width: min(100% - 24px, 1500px); padding-top: 45px; }
+      main { width: min(100% - 20px, 1500px); }
+      .controls {
+        position: relative;
+        grid-template-columns: 1fr 1fr;
+      }
+      .controls .search-control { grid-column: 1 / -1; }
+      .toolbar-summary { align-items: flex-start; flex-direction: column; }
+      .modal-layout { grid-template-columns: 1fr; }
+      .modal-visual-wrap { padding: 18px; }
+      .modal-stage { width: min(100%, 350px); }
+      .modal-panel { padding: 28px 20px 32px; }
+      .modal-close { position: fixed; top: 22px; right: 22px; }
+    }
+    @media (max-width: 470px) {
+      .controls { grid-template-columns: 1fr; }
+      .controls .search-control { grid-column: auto; }
+      .card-grid { grid-template-columns: 1fr; }
+      .card-tile { max-width: 360px; margin-inline: auto; }
+      .modal-actions { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#cardGallery">Skip to card collection</a>
+
+  <header class="site-header">
+    <div class="hero">
+      <p class="eyebrow">Official Gamets Collector Gallery</p>
+      <img src="images/smaller logo 5x3.png" alt="A descriptive sentence about the image">
+
+      <h1> <span>Collectible Value Cards — All Series</span></h1>
+      <p class="hero-copy">Search every series, discover rare finds, enlarge the artwork, and flip each card to reveal its official standard or Sketch Series back.</p>
+      <div class="hero-badges" aria-label="Collection highlights">
+        <span class="hero-badge">JPC_CREATIVE STUDIOS Artwork</span>
+        <span class="hero-badge">Super rare cards</span>
+        <span class="hero-badge">Gold-star rare finds</span>
+        <span class="hero-badge">Standard + Sketch backs</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Card search and filters">
+      <input class="control search-control" id="searchInput" type="search" placeholder="Search by name or card number…" autocomplete="off" aria-label="Search cards">
+      <select class="control" id="seriesFilter" aria-label="Filter by series">
+        <option value="all">All series</option>
+      </select>
+      <select class="control" id="rarityFilter" aria-label="Filter by rarity">
+        <option value="all">All rarities</option>
+      </select>
+      <select class="control" id="typeFilter" aria-label="Filter by card type">
+        <option value="all">Standard + Sketch</option>
+        <option value="standard">Standard cards</option>
+        <option value="sketch">Sketch cards</option>
+        <option value="gold">Gold-star rare finds</option>
+      </select>
+      <select class="control" id="sortSelect" aria-label="Sort cards">
+        <option value="number-asc">Card number</option>
+        <option value="name-asc">Name A–Z</option>
+        <option value="value-desc">Value: high to low</option>
+        <option value="value-asc">Value: low to high</option>
+        <option value="rarity">Rarity</option>
+      </select>
+      <button class="reset-btn" id="resetButton" type="button">Reset</button>
+    </section>
+
+    <div class="toolbar-summary">
+      <span id="resultCount" aria-live="polite"></span>
+      <span class="gold-key"><strong>★</strong> Gold star = special rare find</span>
+    </div>
+
+    <section class="card-grid" id="cardGallery" aria-label="The Gamets collectible card gallery"></section>
+
+    <aside class="legal-note">
+      <strong>Collector-value notice:</strong> Values shown on this gallery are creative estimates for presentation and cataloging. They are not guaranteed resale prices. Physical originals may use a different back design.
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 The Gamets. All characters and card artwork reserved. Visit THE-GAMETS.COM.
+  </footer>
+
+  <dialog id="cardModal" aria-labelledby="modalTitle">
+    <div class="modal-layout">
+      <div class="modal-visual-wrap">
+        <button class="modal-stage" id="modalStage" type="button" aria-label="Flip enlarged card">
+          <span class="flip-inner" id="modalFlipInner"></span>
+        </button>
+      </div>
+      <div class="modal-panel">
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close enlarged card">×</button>
+        <div class="modal-kicker" id="modalKicker"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-number" id="modalNumber"></div>
+        <div class="modal-value" id="modalValue"></div>
+        <p class="modal-description" id="modalDescription"></p>
+        <div class="modal-info-grid">
+          <div class="modal-stat"><span>Series</span><strong id="modalSeries"></strong></div>
+          <div class="modal-stat"><span>Rarity</span><strong id="modalRarity"></strong></div>
+          <div class="modal-stat"><span>Card type</span><strong id="modalType"></strong></div>
+          <div class="modal-stat"><span>Rare find</span><strong id="modalGold"></strong></div>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-nav" id="previousCard" type="button">← Previous</button>
+          <button class="modal-nav flip" id="modalFlipButton" type="button">Flip Card</button>
+          <button class="modal-nav" id="nextCard" type="button">Next →</button>
+        </div>
+        <p class="modal-hint">Click the enlarged card to flip it. Use ← and → to browse. Press Esc to close.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    "use strict";
+
+    const CARDS = [
+  {
+    "id": "air-head-first",
+    "name": "Air Head — First Edition",
+    "number": "1",
+    "value": 185,
+    "series": "Volume 1",
+    "rarity": "Rare",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/air-head-first-edition.jpg",
+    "description": "The original Air Head cover variant featuring the wide-eyed rooftop explorer."
+  },
+  {
+    "id": "rope-rexx",
+    "name": "Rope-Rexx",
+    "number": "17",
+    "value": 68,
+    "series": "Series 4",
+    "rarity": "Uncommon",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/rope-rexx.jpg",
+    "description": "A rope-wrapped powerhouse with oversized spiked fists and unstoppable momentum."
+  },
+
+
+{
+    "id": "chaos golem",
+    "name": "Chaos Golem",
+    "number": "36",
+    "value": 25,
+    "series": "Series 2",
+    "rarity": "Legendary",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/chaos golem 36.png",
+    "description": "A cosmic monster that destroys all paths across the Gamets universe."
+  },
+
+
+
+
+  {
+    "id": "orbitron",
+    "name": "Orbitron",
+    "number": "2",
+    "value": 425,
+    "series": "Series 1",
+    "rarity": "Legendary",
+    "type": "standard",
+    "goldStar": true,
+    "image": "images/orbitron.jpg",
+    "description": "A cosmic machine whose rotating eyes map hidden paths across the Gamets universe."
+  },
+  {
+    "id": "brunodusk",
+    "name": "Brunodusk",
+    "number": "3",
+    "value": 215,
+    "series": "Series 1",
+    "rarity": "Super Rare",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/brunodusk.jpg",
+    "description": "A rugged wasteland guardian assembled from heavy armor and scorched metal."
+  },
+  {
+    "id": "air-head-gold",
+    "name": "Air Head — Gold Frame",
+    "number": "1-G",
+    "value": 340,
+    "series": "Series 1",
+    "rarity": "Legendary",
+    "type": "standard",
+    "goldStar": true,
+    "image": "images/air-head-gold-frame.jpg",
+    "description": "The premium gold-frame edition of Air Head, produced for serious collectors."
+  },
+  {
+    "id": "gold-coil",
+    "name": "Gold Coil",
+    "number": "150",
+    "value": 95,
+    "series": "Series 3",
+    "rarity": "Epic",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/gold-coil.jpg",
+    "description": "A strange striped creature whose coiled body stores ancient patterned energy."
+  },
+  {
+    "id": "crash-knuckle",
+    "name": "Crash Knuckle",
+    "number": "42",
+    "value": 62,
+    "series": "Sketch Series 4",
+    "rarity": "Rare",
+    "type": "sketch",
+    "goldStar": false,
+    "image": "images/crash-knuckle-sketch.jpg",
+    "description": "An ink-heavy sketch card capturing the instant before a ground-smashing strike."
+  },
+  {
+    "id": "=Electro-mite",
+    "name": "Electro-Mite",
+    "number": "73",
+    "value": 44,
+    "series": "Sketch Series 1",
+    "rarity": "Uncommon",
+    "type": "sketch",
+    "goldStar": false,
+    "image": "images/cable-punk-sketch.jpg",
+    "description": "A stitched street light ball that come sto life and becomes  fighter who channels raw power through heavy industrial cables."
+  },
+  {
+    "id": "wish-star",
+    "name": "Wish-Star",
+    "number": "88",
+    "value": 130,
+    "series": "Sketch Series 4",
+    "rarity": "Rare",
+    "type": "sketch",
+    "goldStar": false,
+    "image": "images/wish-star-sketch.jpg",
+    "description": "A colorful unicorn sketch variant with bright paint marks and fearless attitude."
+  },
+  {
+    "id": "pillow-bruiser",
+    "name": "Pillow Bruiser",
+    "number": "201",
+    "value": 36,
+    "series": "Sketch Series 4",
+    "rarity": "Uncommon",
+    "type": "sketch",
+    "goldStar": false,
+    "image": "images/pillow-bruiser-sketch.jpg",
+    "description": "A deceptively soft stitched brawler who turns bedtime into battle time."
+  },
+  {
+    "id": "razor-split-ball",
+    "name": "Razor-Split-Ball",
+    "number": "74",
+    "value": 275,
+    "series": "Series 4",
+    "rarity": "Super Rare",
+    "type": "standard",
+    "goldStar": true,
+    "image": "images/razor-split-ball.jpg",
+    "description": "A divided red-and-white wrecking force armed with rope, spikes, and crushing fists."
+  },
+  {
+    "id": "hornet-king",
+    "name": "Hornet King",
+    "number": "91",
+    "value": 120,
+    "series": "Series 3",
+    "rarity": "Rare",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/hornet-king.jpg",
+    "description": "The battle-worn ruler of the rooftop swarm, carrying the flag of the Gamets."
+  },
+  {
+    "id": "spray-fang",
+    "name": "Spray Fang",
+    "number": "104",
+    "value": 88,
+    "series": "Series 4",
+    "rarity": "Epic",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/spray-fang.jpg",
+    "description": "A graffiti warrior whose pressurized paint attacks leave a permanent mark."
+  },
+  {
+    "id": "chromo-ozzik",
+    "name": "Chromo-Ozzik",
+    "number": "119",
+    "value": 160,
+    "series": "Series 4",
+    "rarity": "Super Rare",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/chromo-ozzik.jpg",
+    "description": "A teal-chrome heavyweight built to absorb impact and return it with greater force."
+  },
+  {
+    "id": "chromo-ozzik-galaxy",
+    "name": "Chromo-Ozzik — Galaxy Strike",
+    "number": "120",
+    "value": 480,
+    "series": "Series 4",
+    "rarity": "Legendary",
+    "type": "standard",
+    "goldStar": true,
+    "image": "images/chromo-ozzik-galaxy.jpg",
+    "description": "The ultra-premium cosmic action variant, charged by galactic lightning."
+  },
+  
+  
+  
+    {
+    "id": "Golden Blaze",
+    "name": "Golden Blaze — Galaxy Strike",
+    "number": "10",
+    "value": 20,
+    "series": "Series 3",
+    "rarity": "Legendary",
+    "type": "standard",
+    "goldStar": false,
+    "image": "images/Golden Blaze.png",
+    "description": "Cosmic Warior with golden  action variant, charged by galactic lightning."
+  },
+  
+  
+  
+  
+  
+  {
+    "id": "hornet-king-sketch",
+    "name": "Hornet King — Sketch",
+    "number": "144",
+    "value": 72,
+    "series": "Sketch Series 3",
+    "rarity": "Rare",
+    "type": "sketch",
+    "goldStar": false,
+    "image": "images/hornet-king-sketch.jpg",
+    "description": "A red-ink notebook study of the Hornet King before the final full-color release."
+  }
+
+
+
+
+
+
+
+
+];
+    const BACKS = {
+  "standard": {
+    "title": "BACK OF CARDS 1",
+    "image": "images/back-of-cards-1.jpg",
+    "notice": "ORIGINAL CARDS HAVE A DIFFERENT BACK."
+  },
+  "sketch": {
+    "title": "SKETCH SERIES",
+    "image": "images/sketch-series-back.jpg",
+    "notice": "OFFICIAL GAMETS SKETCH SERIES BACK."
+  }
+};
+
+    const rarityRank = {
+      "Legendary": 5,
+      "Super Rare": 4,
+      "Epic": 3,
+      "Rare": 2,
+      "Uncommon": 1,
+      "Common": 0
+    };
+
+    const money = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0
+    });
+
+    const gallery = document.getElementById("cardGallery");
+    const searchInput = document.getElementById("searchInput");
+    const seriesFilter = document.getElementById("seriesFilter");
+    const rarityFilter = document.getElementById("rarityFilter");
+    const typeFilter = document.getElementById("typeFilter");
+    const sortSelect = document.getElementById("sortSelect");
+    const resetButton = document.getElementById("resetButton");
+    const resultCount = document.getElementById("resultCount");
+
+    const modal = document.getElementById("cardModal");
+    const modalFlipInner = document.getElementById("modalFlipInner");
+    const modalStage = document.getElementById("modalStage");
+    const modalClose = document.getElementById("modalClose");
+    const modalFlipButton = document.getElementById("modalFlipButton");
+    const previousCard = document.getElementById("previousCard");
+    const nextCard = document.getElementById("nextCard");
+
+    let visibleCards = [...CARDS];
+    let activeIndex = 0;
+    let modalFlipped = false;
+
+    function text(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function buildFilterOptions() {
+      [...new Set(CARDS.map(card => card.series))]
+        .sort((a, b) => a.localeCompare(b, undefined, {numeric: true}))
+        .forEach(series => seriesFilter.insertAdjacentHTML("beforeend", `<option value="${text(series)}">${text(series)}</option>`));
+
+      [...new Set(CARDS.map(card => card.rarity))]
+        .sort((a, b) => rarityRank[b] - rarityRank[a])
+        .forEach(rarity => rarityFilter.insertAdjacentHTML("beforeend", `<option value="${text(rarity)}">${text(rarity)}</option>`));
+    }
+
+    function backFace(card, modalVersion = false) {
+      const back = BACKS[card.type];
+      return `
+        <span class="card-face back">
+          <img src="${back.image}" width="822" height="1122" alt="${text(back.title)} card back">
+          <span class="back-copy">
+            <span class="back-title">${text(back.title)}</span>
+            ${text(back.notice)}
+          </span>
+        </span>`;
+    }
+
+    function frontFace(card) {
+      return `
+        <span class="card-face front">
+          <img src="${card.image}" width="822" height="1122" loading="lazy" decoding="async" alt="${text(card.name)}, card number ${text(card.number)}">
+          ${card.goldStar ? '<span class="gold-star" aria-label="Gold-star rare find">★</span><span class="rare-ribbon">Rare Find</span>' : ''}
+        </span>`;
+    }
+
+    function cardTemplate(card) {
+      return `
+        <article class="card-tile" data-id="${text(card.id)}">
+          <button class="card-stage" type="button" data-action="open" aria-label="Enlarge ${text(card.name)}. Double-click to flip.">
+            <span class="flip-inner">
+              ${frontFace(card)}
+              ${backFace(card)}
+            </span>
+          </button>
+          <div class="card-details">
+            <div class="card-topline">
+              <h2 class="card-name">${text(card.name)}</h2>
+              <span class="card-number">#${text(card.number)}</span>
+            </div>
+            <div class="card-meta">
+              <span class="tag">${text(card.series)}</span>
+              <span class="tag rarity">${text(card.rarity)}</span>
+              <span class="tag">${card.type === "sketch" ? "Sketch" : "Standard"}</span>
+            </div>
+            <div class="value-line">
+              <span class="value-label">Estimated value</span>
+              <strong class="value-amount">${money.format(card.value)}</strong>
+            </div>
+            <div class="card-actions">
+              <button class="action-btn primary" type="button" data-action="flip">Flip Card</button>
+              <button class="action-btn" type="button" data-action="details">Enlarge</button>
+            </div>
+          </div>
+        </article>`;
+    }
+
+    function numberValue(number) {
+      const matched = String(number).match(/\d+/);
+      return matched ? Number(matched[0]) : Number.MAX_SAFE_INTEGER;
+    }
+
+    function applyFilters() {
+      const query = searchInput.value.trim().toLowerCase();
+      const series = seriesFilter.value;
+      const rarity = rarityFilter.value;
+      const type = typeFilter.value;
+
+      visibleCards = CARDS.filter(card => {
+        const searchable = `${card.name} ${card.number} ${card.series} ${card.rarity}`.toLowerCase();
+        const matchesQuery = !query || searchable.includes(query);
+        const matchesSeries = series === "all" || card.series === series;
+        const matchesRarity = rarity === "all" || card.rarity === rarity;
+        const matchesType =
+          type === "all" ||
+          (type === "gold" ? card.goldStar : card.type === type);
+        return matchesQuery && matchesSeries && matchesRarity && matchesType;
+      });
+
+      const sort = sortSelect.value;
+      visibleCards.sort((a, b) => {
+        if (sort === "name-asc") return a.name.localeCompare(b.name);
+        if (sort === "value-desc") return b.value - a.value;
+        if (sort === "value-asc") return a.value - b.value;
+        if (sort === "rarity") return rarityRank[b.rarity] - rarityRank[a.rarity] || b.value - a.value;
+        return numberValue(a.number) - numberValue(b.number) || String(a.number).localeCompare(String(b.number));
+      });
+
+      renderCards();
+    }
+
+    function renderCards() {
+      resultCount.textContent = `${visibleCards.length} card${visibleCards.length === 1 ? "" : "s"} shown`;
+      if (!visibleCards.length) {
+        gallery.innerHTML = '<div class="empty-state"><strong>No cards matched your search.</strong><br>Reset the filters to view the complete collection.</div>';
+        return;
+      }
+      gallery.innerHTML = visibleCards.map(cardTemplate).join("");
+    }
+
+    function toggleTile(tile) {
+      const inner = tile.querySelector(".flip-inner");
+      inner.classList.toggle("is-flipped");
+      const button = tile.querySelector('[data-action="flip"]');
+      if (button) button.textContent = inner.classList.contains("is-flipped") ? "Show Front" : "Flip Card";
+    }
+
+    gallery.addEventListener("click", event => {
+      const tile = event.target.closest(".card-tile");
+      if (!tile) return;
+      const cardIndex = visibleCards.findIndex(card => card.id === tile.dataset.id);
+      if (cardIndex < 0) return;
+
+      const action = event.target.closest("[data-action]")?.dataset.action;
+      if (action === "flip") {
+        toggleTile(tile);
+        return;
+      }
+      if (action === "details") {
+        openModal(cardIndex);
+        return;
+      }
+      if (action === "open") {
+        const stage = event.target.closest(".card-stage");
+        clearTimeout(stage._singleClickTimer);
+        stage._singleClickTimer = setTimeout(() => openModal(cardIndex), 240);
+      }
+    });
+
+    gallery.addEventListener("dblclick", event => {
+      const tile = event.target.closest(".card-tile");
+      if (!tile || !event.target.closest(".card-stage")) return;
+      const stage = tile.querySelector(".card-stage");
+      clearTimeout(stage._singleClickTimer);
+      event.preventDefault();
+      toggleTile(tile);
+    });
+
+    function openModal(index) {
+      activeIndex = index;
+      modalFlipped = false;
+      updateModal();
+      if (typeof modal.showModal === "function") modal.showModal();
+      else modal.setAttribute("open", "");
+    }
+
+    function updateModal() {
+      const card = visibleCards[activeIndex];
+      const back = BACKS[card.type];
+
+      modalFlipInner.classList.toggle("is-flipped", modalFlipped);
+      modalFlipInner.innerHTML = `
+        ${frontFace(card)}
+        ${backFace(card, true)}
+      `;
+      document.getElementById("modalKicker").textContent = card.goldStar ? "★ Gold-Star Rare Find" : card.rarity;
+      document.getElementById("modalTitle").textContent = card.name;
+      document.getElementById("modalNumber").textContent = `Collector Card #${card.number}`;
+      document.getElementById("modalValue").textContent = money.format(card.value);
+      document.getElementById("modalDescription").textContent = card.description;
+      document.getElementById("modalSeries").textContent = card.series;
+      document.getElementById("modalRarity").textContent = card.rarity;
+      document.getElementById("modalType").textContent = card.type === "sketch" ? "Sketch Series" : "Standard";
+      document.getElementById("modalGold").textContent = card.goldStar ? "Yes — gold star" : "No";
+      modalFlipButton.textContent = modalFlipped ? "Show Front" : "Flip Card";
+    }
+
+    function toggleModalFlip() {
+      modalFlipped = !modalFlipped;
+      modalFlipInner.classList.toggle("is-flipped", modalFlipped);
+      modalFlipButton.textContent = modalFlipped ? "Show Front" : "Flip Card";
+    }
+
+    function navigateModal(direction) {
+      if (!visibleCards.length) return;
+      activeIndex = (activeIndex + direction + visibleCards.length) % visibleCards.length;
+      modalFlipped = false;
+      updateModal();
+    }
+
+    modalStage.addEventListener("click", toggleModalFlip);
+    modalFlipButton.addEventListener("click", toggleModalFlip);
+    previousCard.addEventListener("click", () => navigateModal(-1));
+    nextCard.addEventListener("click", () => navigateModal(1));
+    modalClose.addEventListener("click", () => modal.close());
+
+    modal.addEventListener("click", event => {
+      if (event.target === modal) modal.close();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (!modal.open) return;
+      if (event.key === "ArrowLeft") navigateModal(-1);
+      if (event.key === "ArrowRight") navigateModal(1);
+    });
+
+    [searchInput, seriesFilter, rarityFilter, typeFilter, sortSelect].forEach(control => {
+      control.addEventListener(control === searchInput ? "input" : "change", applyFilters);
+    });
+
+    resetButton.addEventListener("click", () => {
+      searchInput.value = "";
+      seriesFilter.value = "all";
+      rarityFilter.value = "all";
+      typeFilter.value = "all";
+      sortSelect.value = "number-asc";
+      applyFilters();
+      searchInput.focus();
+    });
+
+    buildFilterOptions();
+    applyFilters();
+  </script>
+</body>
+</html>
